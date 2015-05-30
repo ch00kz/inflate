@@ -2,11 +2,16 @@
 {% load static %}
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/small.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/medium.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inflate</title>
 </head>
 <body>
+    <header id="mobile-header"></header>
     <div id="sidebar"></div>
     <div id="content"></div>
+    <footer></footer>
 </body>
 </html>
