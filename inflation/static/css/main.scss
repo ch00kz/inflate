@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+$sidebarWidth: 300px;
+
+#sidebar {
+    float: left;
+    height: 100%;
+    width: $sidebarWidth;
+    background-color: #33323F;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+#content {
+    float: left;
+    background-color: white;
+    height: 100%;
+    width: calc(100% - #{$sidebarWidth});
+}
