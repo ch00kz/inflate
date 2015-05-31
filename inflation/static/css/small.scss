@@ -1,0 +1,74 @@
+@import 'colours';
+
+#sidebar {
+    display:none;
+}
+
+$headerHeight: 57px;
+$smallNavTransform: calc(-4px - #{$headerHeight} * 4);
+
+#small-header {
+    z-index: 2;
+    display: block;
+    height: $headerHeight; width: 100%;
+    background-color: $headerBg;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+
+    h1 {
+        float: left;
+        margin: 0px;
+        font-weight: 200;
+        font-size: 24px;
+        height: $headerHeight;
+        line-height: calc( #{$headerHeight} - 2px);
+        letter-spacing: 6px;
+    }
+
+    #small-logo {
+        float: left;
+        margin-left: 15px;
+        height:$headerHeight; width: 40px;
+        background: url('../img/logo.svg') center center no-repeat;
+        background-size: 30px auto;
+    }
+
+    #hamburger {
+        float: right;
+        margin-right: 15px;
+        height:40px; width: 40px;
+        position: relative;
+        top: 10px;
+        background: url('../img/hamburger.svg') center center no-repeat;
+        transition: all 0.3s;
+        &:active {
+            border-radius: 100px;
+            background-color: gray;
+        }
+    }
+}
+
+#small-nav {
+    z-index: 0;
+    display: block;
+    width: 100%;
+    background-color: $headerBg;
+    transition: margin-top 0.2s;
+    margin-top: $smallNavTransform;
+
+    &.show {
+        display: block;
+        margin-top:0px;
+    }
+
+    a {
+        display: block;
+        height: 57px;
+        border-top: 1px solid #3D3D3D;
+    }
+}
+
+#content {
+    float: none;
+    width: 100%; height: calc(100% - #{$headerHeight});
+}

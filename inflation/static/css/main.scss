@@ -5,6 +5,9 @@ html, body {
 }
 
 $sidebarWidth: 300px;
+#small-header, #small-nav {
+    display: none;
+}
 
 #sidebar {
     float: left;
