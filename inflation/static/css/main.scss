@@ -57,6 +57,8 @@ $footerHeight: 40px;
     height: 100%;
     width: $sidebarWidth;
     background-color: $headerBg;
+    transition: all 0.5s;
+
 
     a {
         display: block;

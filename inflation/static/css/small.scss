@@ -59,10 +59,13 @@ $smallNavTransform: calc(-4px - #{$headerHeight} * 4);
     width: 100%;
     background-color: $headerBg;
     transform: translate(0px, $smallNavTransform);
+    -webkit-transform: translate(0px, $smallNavTransform);
     transition: transform 0.3s;
+    transition: -webkit-transform 0.3s;
 
     &.show {
         transform: translate(0px, 0px);
+        -webkit-transform: translate(0px, 0px);
     }
 
     a {
