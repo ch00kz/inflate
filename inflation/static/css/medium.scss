@@ -1,0 +1,32 @@
+$sidebarWidth: 100px;
+$footerHeight: 40px;
+#sidebar {
+    width: $sidebarWidth;
+
+    a {
+        .label {
+            display: none;
+        }
+    }
+}
+
+#logo {
+    height: 113px;
+    width: 100%;
+    background: url('../img/logo.svg') 30px center no-repeat;
+    border-bottom: 2px solid white;
+    background-color: #5D5D5D;
+
+    .label {
+        display: none;
+    }
+}
+
+#content {
+    width: calc(100% - #{$sidebarWidth} - 80px);
+}
+
+footer {
+    float: left;
+    width: calc(100% - #{$sidebarWidth});
+}

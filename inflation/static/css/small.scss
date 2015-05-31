@@ -1,5 +1,8 @@
 @import 'colours';
-
+body {
+    font-size: 16px;
+    line-height: 24px;
+}
 #sidebar {
     display:none;
 }
@@ -80,8 +83,18 @@ $smallNavTransform: calc(-4px - #{$headerHeight} * 4);
 }
 
 #content {
-    max-width: 100%;
-    min-height: calc(100% - #{1 * $headerHeight + 40px});
+    float: none;
+    width: calc(100% - 60px);
+    overflow-y: visible;
+    min-height: calc(100% - #{1 * $headerHeight + 40px + 60px});
+    height: auto;
     margin-top: $smallNavTransform;
-    background-color: gray;
+    background-color: white;
+    transition: margin-top 0.3s;
+    padding: 30px;
+}
+
+footer {
+    width: 100%;
+    float: none;
 }

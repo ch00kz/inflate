@@ -2,13 +2,21 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: 'Arvo', serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #3c3c3c;
+    text-align: justify;
 }
 
 a {
     text-decoration: none;
 }
 
+
 $sidebarWidth: 300px;
+$footerHeight: 40px;
 #small-header, #small-nav {
     display: none;
 }
@@ -41,21 +49,57 @@ $sidebarWidth: 300px;
     background: url('../img/email.svg') center center no-repeat;
 }
 
+@import 'colours';
+
 #sidebar {
     float: left;
     height: 100%;
     width: $sidebarWidth;
-    background-color: #33323F;
-    box-shadow: inset 0 0 10px #000000;
+    background-color: $headerBg;
+
+    a {
+        display: block;
+        height: 100px;
+
+        &:hover {
+            background-color: #1F1F1F;
+            box-shadow: inset 0 0 3px 1px black;
+        }
+
+        &.icon {
+            height: 100px;
+            width: 100%;
+            background-position: 30px center !important;
+        }
+
+        .label {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            height: 100%;
+            line-height: 100px;
+            padding-left: 110px;
+            font-size: 16px;
+        }
+    }
+}
+
+#content {
+    float: left;
+    width: calc(100% - #{$sidebarWidth} - 80px);
+    height: calc(100% - #{$footerHeight} - 80px);
+    overflow-y: auto;
+    padding: 40px;
 }
 
 footer {
     background-color: #262626;
     text-align: center;
     display: block;
-    width: 100%;
     height: 40px;
     line-height: 40px;
+    float: left;
+    width: calc(100% - #{$sidebarWidth});
 
     .icon {
         display: inline-block;
@@ -65,5 +109,24 @@ footer {
         position:relative;
         top: 3px;
         background-size: 25px auto !important;
+    }
+}
+
+#logo {
+    height: 113px;
+    width: 100%;
+    background: url('../img/logo.svg') 30px center no-repeat;
+    border-bottom: 2px solid white;
+    background-color: #5D5D5D;
+
+    .label {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        font-weight: 200;
+        height: 100%;
+        line-height: 113px;
+        padding-left: 85px;
+        font-size: 30px;
+        letter-spacing: 10px;
     }
 }
