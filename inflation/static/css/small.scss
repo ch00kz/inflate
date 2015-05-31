@@ -8,12 +8,15 @@ $headerHeight: 57px;
 $smallNavTransform: calc(-4px - #{$headerHeight} * 4);
 
 #small-header {
-    z-index: 2;
     display: block;
-    height: $headerHeight; width: 100%;
+    position: relative;
+    top:0px;
+    height: $headerHeight;
+    width: 100%;
     background-color: $headerBg;
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
+    z-index: 1;
 
     h1 {
         float: left;
@@ -49,26 +52,36 @@ $smallNavTransform: calc(-4px - #{$headerHeight} * 4);
 }
 
 #small-nav {
-    z-index: 0;
     display: block;
     width: 100%;
     background-color: $headerBg;
-    transition: margin-top 0.2s;
-    margin-top: $smallNavTransform;
+    transform: translate(0px, $smallNavTransform);
+    transition: transform 0.3s;
 
     &.show {
-        display: block;
-        margin-top:0px;
+        transform: translate(0px, 0px);
     }
 
     a {
+        color: white;
         display: block;
         height: 57px;
+        line-height: 57px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
         border-top: 1px solid #3D3D3D;
+
+        .icon {
+            float: left;
+            width: 60px; height: 100%;
+            background-size: 30px auto !important;
+        }
     }
 }
 
 #content {
-    float: none;
-    width: 100%; height: calc(100% - #{$headerHeight});
+    max-width: 100%;
+    min-height: calc(100% - #{1 * $headerHeight + 40px});
+    margin-top: $smallNavTransform;
+    background-color: gray;
 }
